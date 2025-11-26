@@ -1,0 +1,1 @@
+This final version is packaged, so Chrome might not let you use it, if you want to use it, download "Final Source", unzip it and load that folder in Chrome with the "Load Unpacked Extension" in Chrome
