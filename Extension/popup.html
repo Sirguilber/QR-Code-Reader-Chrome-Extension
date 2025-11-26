@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html>
-<body style="width:200px; padding:10px; font-family:sans-serif;">
-    <h3>Random Popup</h3>
-    <button id="btn">Generar número</button>
-    <p id="result"></p>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: sans-serif;
+            width: 300px;
+            padding: 10px;
+        }
+        video {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+            color: green;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
 
+<body>
+    <h3>Escaner QR</h3>
+
+    <video id="video" autoplay></video>
+
+    <p id="result">Esperando QR...</p>
+
+    <script src="jsQR.js"></script>
     <script src="popup.js"></script>
 </body>
 </html>
