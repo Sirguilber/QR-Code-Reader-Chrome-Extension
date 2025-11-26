@@ -1,35 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <style>
-        body {
-            font-family: sans-serif;
-            width: 300px;
-            padding: 10px;
-        }
-        video {
-            width: 100%;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-        }
-        #result {
-            margin-top: 10px;
-            font-weight: bold;
-            color: green;
-            word-wrap: break-word;
-        }
-    </style>
+<meta charset="utf-8">
+<link rel="stylesheet" href="popup.css">
 </head>
-
 <body>
-    <h3>Escaner QR</h3>
+  <div class="container">
+    <h1>QR Scanner</h1>
 
-    <video id="video" autoplay></video>
+    <div class="video-wrapper">
+      <video id="video" autoplay></video>
+      <canvas id="overlay"></canvas>
+    </div>
 
-    <p id="result">Esperando QR...</p>
+    <div id="result" class="result">Escanea un codigo...</div>
+  </div>
 
-    <script src="jsQR.js"></script>
-    <script src="popup.js"></script>
+  <script src="jsQR.js"></script>
+  <script src="popup.js"></script>
 </body>
 </html>
