@@ -1,3 +1,4 @@
-document.getElementById('mi-boton').addEventListener('click', () => {
-  alert('¡Hola! Esta es mi extensión de prueba.');
-});
+document.getElementById("btn").onclick = () => {
+    document.getElementById("result").textContent =
+        "Número random: " + Math.floor(Math.random() * 1000);
+};
