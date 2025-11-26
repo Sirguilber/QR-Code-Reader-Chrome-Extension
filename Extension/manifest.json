@@ -1,15 +1,33 @@
 {
   "manifest_version": 3,
-  "name": "Mi Extension Ejemplo",
+  "name": "Mi Extension Random",
   "version": "1.0",
-  "description": "Una extension simple de ejemplo",
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "icon.png",
-      "48": "icon.png",
-      "128": "icon.png"
-    }
+  "description": "Boton flotante: resume, copia, lee en voz y resalta contenido (demo).",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
   },
-  "permissions": []
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Mi Extension Random"
+  }
 }
