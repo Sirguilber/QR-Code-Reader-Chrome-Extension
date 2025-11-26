@@ -12,18 +12,18 @@ const canvas = document.createElement("canvas");
 const ctx = canvas.getContext("2d", { willReadFrequently: true });
 
 function scanLoop() {
-    if (video.readyState === video.HAVE_ENOUGH_DATA) {
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
 
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-        const qr = jsQR(imageData.data, canvas.width, canvas.height);
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-        if (qr) {
-            resultText.textContent = "QR Detectado: " + qr.data;
-        }
+    const code = jsQR(imageData.data, canvas.width, canvas.height);
+
+    if (code) {
+        result.textContent = code.data;
+        navigator.clipboard.writeText(code.data).catch(() => {});
     }
 
     requestAnimationFrame(scanLoop);
