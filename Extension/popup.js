@@ -9,7 +9,7 @@ async function startCamera() {
 startCamera();
 
 const canvas = document.createElement("canvas");
-const ctx = canvas.getContext("2d");
+const ctx = canvas.getContext("2d", { willReadFrequently: true });
 
 function scanLoop() {
     if (video.readyState === video.HAVE_ENOUGH_DATA) {
