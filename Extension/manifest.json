@@ -3,7 +3,6 @@
   "name": "QR Scanner",
   "version": "1.0",
   "description": "Escaner de QR usando la camara",
-  "permissions": ["camera"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
